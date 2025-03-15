@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.card {
+  background-color: white;
+  border-radius: 10px;
+}
+.card img {
+  height: 120px;
+  background-position: center;
+  background-size: cover;
+}
+.card title {
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+header,
+footer {
+  background: #f20d70;
+  height: 80px;
+  padding: auto;
+}
