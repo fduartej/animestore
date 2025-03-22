@@ -18,12 +18,9 @@ footer {
   background-color: #f20d70;
   color: white;
 }
-header {
-  padding: 1rem;
-  text-align: center;
-}
-header h1 {
-  font-size: 1.5rem;
+.navbar h1 {
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 nav {
   padding: 0.5rem;
@@ -44,17 +41,23 @@ nav ul li a {
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  padding: 15px;
+}
 
 /*desktop*/
 @media (min-width: 960px) {
   body {
     padding: 20px;
-    background-color: #fdfdfd;
+    background-color: #ffffff;
   }
   .card-grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    padding: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    padding: 15px;
   }
   .navbar {
     padding: 15px 25px;
@@ -72,9 +75,8 @@ nav ul li a {
     padding: 20px;
   }
 }
-
 /*mobile*/
-@media (min-width: 400px) and (max-width: 700px) {
+@media (min-width: 400px) {
   .card-grid {
     grid-template-columns: 1fr;
   }
