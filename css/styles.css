@@ -82,9 +82,22 @@ footer {
 }
 
 .card .price {
-  font-size: 0.9rem;
-  color: #333;
-  margin-bottom: 10px;
+  background-color: #f20d70;
+  color: white;
+  padding: 8px 0;
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: bold;
+  margin: 0 10px 10px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.card .favorite {
+  left: 10px;
+  bottom: 18px;
+  color: #f20d70;
+  font-size: 1.2rem;
 }
 
 /* Footer */
