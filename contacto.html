@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Anime Store</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/contact.css" />
+  </head>
+  <body>
+    <div class="store-container">
+      <nav class="navbar">
+        <h1 class="navbar-title">Anime Store</h1>
+        <button class="hamburger" aria-label="Toggle menu">&#9776;</button>
+        <ul class="navitems">
+          <li><a href="index.html">Catalogo</a></li>
+          <li><a href="contacto.html">Contactanos</a></li>
+          <li><a href="#">Acerca</a></li>
+        </ul>
+      </nav>
+
+      <div class="contacto-group">
+        <h2>Contactanos</h2>
+        <p>Si tu tienes alguna pregunta, sientete libre de hacernosla</p>
+        <form class="contact-form">
+          <label for="name">Nombre:</label>
+          <input type="text" id="name" placeholder="enter your name" />
+          <label for="email">Email:</label>
+          <input type="text" id="email" placeholder="enter your name" />
+          <label for="message">Message:</label>
+          <textarea id="message" placeholder="enter your message"></textarea>
+          <input type="button" value="Enviar" onclick="msg();" />
+        </form>
+      </div>
+
+      <footer>
+        <p>Av Flora Tristan s/n, La Molina - Peru</p>
+        <p>animestore@gmail.com</p>
+        <p>&copy; 2025 Anime Shop. Todos los derechos reservados.</p>
+      </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
