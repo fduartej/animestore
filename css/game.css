@@ -14,3 +14,11 @@
   position: relative;
   animation: movePlayer 2s infinite alternate;
 }
+.coin {
+  width: 30px;
+  height: 30px;
+  background-color: #f39c12;
+  border-radius: 50%;
+  position: absolute;
+  animation: moveCoin 2s infinite alternate;
+}

@@ -9,6 +9,9 @@ document.addEventListener("DOMContentLoaded", function () {
   let playerY = Math.random() * (gameHeight - 50);
   player.style.left = `${playerX}px`;
   player.style.top = `${playerY}px`;
+
+  spawnCoin(); // Spawn the first coin
+  setInterval(spawnCoin, 3000); // Spawn a new coin every 3 seconds
 });
 
 document.addEventListener("keydown", function (event) {
@@ -48,3 +51,24 @@ document.addEventListener("keydown", function (event) {
   player.style.left = `${playerX}px`;
   player.style.top = `${playerY}px`;
 });
+
+function spawnCoin() {
+  const coin = document.createElement("div");
+  coin.classList.add("coin");
+  const gameContainer = document.querySelector(".game-container");
+  const gameWidth = gameContainer.clientWidth;
+  const gameHeight = gameContainer.clientHeight;
+
+  // Set random position for the coin
+  const coinX = Math.random() * (gameWidth - 30);
+  const coinY = Math.random() * (gameHeight - 30);
+  coin.style.left = `${coinX}px`;
+  coin.style.top = `${coinY}px`;
+
+  gameContainer.appendChild(coin);
+
+  // Remove the coin after a few seconds
+  setTimeout(() => {
+    coin.remove();
+  }, 5000);
+}
