@@ -36,6 +36,33 @@
             pago
         );
       }
+      function validarDatosFormularioMensaje() {
+        var nombre = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var fechaNacimiento = document.getElementById("birthday").value;
+        var pago = document.getElementById("pago").value;
+        if (nombre === "") {
+          document.getElementById("name-error").innerHTML =
+            "Por favor, ingresa tu nombre.";
+          return false;
+        }
+        if (email === "") {
+          document.getElementById("email-error").innerHTML =
+            "Por favor, ingresa tu email.";
+          return false;
+        }
+        if (fechaNacimiento === "") {
+          document.getElementById("birthday-error").innerHTML =
+            "Por favor, ingresa tu fecha de nacimiento.";
+          return false;
+        }
+        if (pago === "") {
+          document.getElementById("pago-error").innerHTML =
+            "Por favor, ingresa tu pago.";
+          return false;
+        }
+        return true;
+      }
     </script>
   </head>
   <body>
@@ -57,14 +84,17 @@
         <form class="contact-form">
           <label for="name">Nombre:</label>
           <input type="text" id="name" placeholder="ingresa tu nombre" />
+          <span class="error-message" id="name-error"></span>
           <label for="email">Email:</label>
           <input type="text" id="email" placeholder="ingresa tu email" />
+          <span class="error-message" id="email-error"></span>
           <label for="birthday">Fecha Nacimiento:</label>
           <input
             type="text"
             id="birthday"
             placeholder="ingresa tu fecha nacimiento"
           />
+          <span class="error-message" id="birthday-error"></span>
           <label for="torneo">Torneo:</label>
           <select id="torneo">
             <option value="lol">LOL</option>
@@ -73,10 +103,11 @@
           </select>
           <label for="pago">Pago:</label>
           <input type="text" id="pago" placeholder="ingresa tu pago" />
+          <span class="error-message" id="pago-error"></span>
           <input
             type="button"
             value="Registrar"
-            onclick="validarDatosFormulario();"
+            onclick="validarDatosFormularioMensaje();"
           />
         </form>
       </div>
