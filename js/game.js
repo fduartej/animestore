@@ -4,9 +4,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const gameWidth = gameContainer.clientWidth;
   const gameHeight = gameContainer.clientHeight;
 
+  let playerX = gameWidth / 2 - 25; // Center the player horizontally
   // Set initial position
-  let playerX = Math.random() * (gameWidth - 50);
-  let playerY = Math.random() * (gameHeight - 50);
+  //let playerX = Math.random() * (gameWidth - 30);
+  let playerY = Math.random() * (gameHeight - 30);
   player.style.left = `${playerX}px`;
   player.style.top = `${playerY}px`;
 
@@ -19,7 +20,7 @@ document.addEventListener("keydown", function (event) {
   const gameContainer = document.querySelector(".game-container");
   const gameWidth = gameContainer.clientWidth;
   const gameHeight = gameContainer.clientHeight;
-
+  collectCoins(); // Check for coin collection
   let playerX = parseInt(player.style.left);
   let playerY = parseInt(player.style.top);
 
@@ -71,4 +72,24 @@ function spawnCoin() {
   setTimeout(() => {
     coin.remove();
   }, 5000);
+}
+
+function collectCoins() {
+  const player = document.querySelector(".game-player");
+  const coins = document.querySelectorAll(".coin");
+
+  coins.forEach((coin) => {
+    const coinRect = coin.getBoundingClientRect();
+    const playerRect = player.getBoundingClientRect();
+
+    // Check for collision
+    if (
+      playerRect.x < coinRect.x + coinRect.width &&
+      playerRect.x + playerRect.width > coinRect.x &&
+      playerRect.y < coinRect.y + coinRect.height &&
+      playerRect.y + playerRect.height > coinRect.y
+    ) {
+      coin.remove(); // Remove the coin if collected
+    }
+  });
 }
