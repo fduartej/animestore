@@ -35,6 +35,11 @@
   border-radius: 5px;
   cursor: pointer;
 }
+.contact-form select {
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
 .contact-form input[type="button"]:hover {
   background-color: #333;
 }

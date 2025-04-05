@@ -6,9 +6,35 @@
     <link rel="stylesheet" href="css/contact.css" />
 
     <script type="text/javascript">
-      function msg() {
-        console.log("hello world js log");
-        prompt("Your age?", "0");
+      function validarDatosFormulario() {
+        var nombre = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var fechaNacimiento = document.getElementById("birthday").value;
+        var torneo = document.getElementById("torneo").value;
+        var pago = document.getElementById("pago").value;
+
+        if (
+          nombre === "" ||
+          email === "" ||
+          fechaNacimiento === "" ||
+          pago === ""
+        ) {
+          alert("Por favor, completa todos los campos.");
+          return false;
+        }
+
+        alert(
+          "Nombre: " +
+            nombre +
+            "\nEmail: " +
+            email +
+            "\nFecha de Nacimiento: " +
+            fechaNacimiento +
+            "\nTorneo: " +
+            torneo +
+            "\nPago: " +
+            pago
+        );
       }
     </script>
   </head>
@@ -30,12 +56,28 @@
         <p>Si tu tienes alguna pregunta, sientete libre de hacernosla</p>
         <form class="contact-form">
           <label for="name">Nombre:</label>
-          <input type="text" id="name" placeholder="enter your name" />
+          <input type="text" id="name" placeholder="ingresa tu nombre" />
           <label for="email">Email:</label>
-          <input type="text" id="email" placeholder="enter your name" />
-          <label for="message">Message:</label>
-          <textarea id="message" placeholder="enter your message"></textarea>
-          <input type="button" value="Enviar" onclick="msg();" />
+          <input type="text" id="email" placeholder="ingresa tu email" />
+          <label for="birthday">Fecha Nacimiento:</label>
+          <input
+            type="text"
+            id="birthday"
+            placeholder="ingresa tu fecha nacimiento"
+          />
+          <label for="torneo">Torneo:</label>
+          <select id="torneo">
+            <option value="lol">LOL</option>
+            <option value="fortnite">Fortnite</option>
+            <option value="x">X</option>
+          </select>
+          <label for="pago">Pago:</label>
+          <input type="text" id="pago" placeholder="ingresa tu pago" />
+          <input
+            type="button"
+            value="Registrar"
+            onclick="validarDatosFormulario();"
+          />
         </form>
       </div>
 
