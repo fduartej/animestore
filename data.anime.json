@@ -40,5 +40,11 @@
     "image": "https://fduartej.github.io/animestore/images/products/003.png",
     "price": 400,
     "category": "FeMale"
+  },
+  {
+    "title": "Genio3",
+    "image": "https://fduartej.github.io/animestore/images/products/002.png",
+    "price": 600,
+    "category": "FeMale"
   }
 ]

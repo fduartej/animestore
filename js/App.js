@@ -35,3 +35,12 @@ function FooterComponent() {
     </footer>
   );
 }
+
+ReactDOM.render(
+  <NavBarComponent />,
+  document.getElementById("navbarcomponent")
+);
+ReactDOM.render(
+  <FooterComponent />,
+  document.getElementById("footercomponent")
+);
