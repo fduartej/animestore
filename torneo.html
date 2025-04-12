@@ -76,8 +76,7 @@
   </head>
   <body>
     <div class="store-container">
-      <div id="root"></div>
-
+      <div id="navbarcomponent"></div>
       <div class="contacto-group">
         <h2>Torneo</h2>
         <p>Si tu tienes alguna pregunta, sientete libre de hacernosla</p>
@@ -112,18 +111,21 @@
         </form>
       </div>
 
-      <footer>
-        <p>Av Flora Tristan s/n, La Molina - Peru</p>
-        <p>animestore@gmail.com</p>
-        <p>&copy; 2025 Anime Shop. Todos los derechos reservados.</p>
-      </footer>
+      <div id="footercomponent"></div>
     </div>
 
     <script src="js/script.js"></script>
     <script type="text/babel" src="js/App.js"></script>
     <script type="text/babel">
       // Renderizar la aplicación principal
-      ReactDOM.render(<App />, document.getElementById("root"));
+      ReactDOM.render(
+        <NavBarComponent />,
+        document.getElementById("navbarcomponent")
+      );
+      ReactDOM.render(
+        <FooterComponent />,
+        document.getElementById("footercomponent")
+      );
     </script>
   </body>
 </html>

@@ -1,4 +1,4 @@
-function App() {
+function NavBarComponent() {
   return (
     <nav class="navbar">
       <h1 class="navbar-title">Anime Store</h1>
@@ -26,5 +26,12 @@ function App() {
   );
 }
 
-// Renderizar la aplicación principal
-ReactDOM.render(<App />, document.getElementById("root"));
+function FooterComponent() {
+  return (
+    <footer>
+      <p>Av Flora Tristan s/n, La Molina - Peru</p>
+      <p>animestore@gmail.com</p>
+      <p>&copy; 2025 Anime Shop. Todos los derechos reservados.</p>
+    </footer>
+  );
+}
