@@ -25,56 +25,7 @@
         </select>
       </aside>
 
-      <div class="card-grid">
-        <div class="card" data-category="gerrero">
-          <img src="images/products/001.png" />
-          <div class="title">
-            <h5>Gladiator</h5>
-          </div>
-          <div class="favorite">❤</div>
-          <div class="price">S/. 600</div>
-        </div>
-        <div class="card" data-category="gerrera">
-          <img src="images/products/002.png" />
-          <div class="title">
-            <h5>Vengador</h5>
-          </div>
-          <div class="favorite">❤</div>
-          <div class="price">S/. 600</div>
-        </div>
-        <div class="card" data-category="gerrera">
-          <img src="images/products/003.png" />
-          <div class="title">
-            <h5>Gladiator</h5>
-          </div>
-          <div class="favorite">❤</div>
-          <div class="price">S/. 600</div>
-        </div>
-        <div class="card" data-category="gerrero">
-          <img src="images/products/004.png" />
-          <div class="title">
-            <h5>Vengador</h5>
-          </div>
-          <div class="favorite">❤</div>
-          <div class="price">S/. 600</div>
-        </div>
-        <div class="card" data-category="gerrero">
-          <img src="images/products/005.png" />
-          <div class="title">
-            <h5>Gladiator</h5>
-          </div>
-          <div class="favorite">❤</div>
-          <div class="price">S/. 600</div>
-        </div>
-        <div class="card" data-category="gerrero">
-          <img src="images/products/006.png" />
-          <div class="title">
-            <h5>Vengador</h5>
-          </div>
-          <div class="favorite">❤</div>
-          <div class="price">S/. 600</div>
-        </div>
-      </div>
+      <div id="cartlistcomponent"></div>
 
       <div id="footercomponent"></div>
     </div>
@@ -92,6 +43,32 @@
         <FooterComponent />,
         document.getElementById("footercomponent")
       );
+    </script>
+    <script type="text/babel" src="js/Cart.js"></script>
+    <script type="text/babel">
+      class App extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = {
+            cardsData: [],
+          };
+        }
+
+        componentDidMount() {
+          fetch("./data.anime.json")
+            .then((response) => response.json())
+            .then((data) => {
+              this.setState({ cardsData: data });
+            })
+            .catch((error) => console.error("hay un error", error));
+        }
+
+        render() {
+          return <CardListComponent cardsData={this.state.cardsData} />;
+        }
+      }
+
+      ReactDOM.render(<App />, document.getElementById("cartlistcomponent"));
     </script>
   </body>
 </html>

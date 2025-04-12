@@ -1,11 +1,11 @@
 function NavBarComponent() {
   return (
-    <nav class="navbar">
-      <h1 class="navbar-title">Anime Store</h1>
-      <button class="hamburger" aria-label="Toggle menu">
+    <nav className="navbar">
+      <h1 className="navbar-title">Anime Store</h1>
+      <button className="hamburger" aria-label="Toggle menu">
         &#9776;
       </button>
-      <ul class="navitems">
+      <ul className="navitems">
         <li>
           <a href="index.html">Catalogo</a>
         </li>
