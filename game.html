@@ -5,20 +5,19 @@
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="css/game.css" />
     <script type="text/javascript"></script>
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
   </head>
   <body>
     <div class="store-container">
-      <nav class="navbar">
-        <h1 class="navbar-title">Anime Store</h1>
-        <button class="hamburger" aria-label="Toggle menu">&#9776;</button>
-        <ul class="navitems">
-          <li><a href="index.html">Catalogo</a></li>
-          <li><a href="contacto.html">Contactanos</a></li>
-          <li><a href="torneo.html">Torneo</a></li>
-          <li><a href="game.html">Game</a></li>
-          <li><a href="#">Acerca</a></li>
-        </ul>
-      </nav>
+      <div id="root"></div>
 
       <div class="game-area">
         <h1>Anime Game</h1>
@@ -37,5 +36,10 @@
     </div>
 
     <script src="js/game.js"></script>
+    <script type="text/babel" src="js/App.js"></script>
+    <script type="text/babel">
+      // Renderizar la aplicación principal
+      ReactDOM.render(<App />, document.getElementById("root"));
+    </script>
   </body>
 </html>
