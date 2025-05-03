@@ -13,7 +13,7 @@
       crossorigin
     ></script>
     <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
-
+    <script src="https://cdn.tailwindcss.com"></script>
     <script type="text/javascript">
       function msg() {
         console.log("hello world js log");
@@ -21,7 +21,7 @@
       }
     </script>
   </head>
-  <body>
+  <body class="min-h-screen flex flex-col">
     <div class="store-container">
       <div id="navbarcomponent"></div>
 
@@ -35,7 +35,12 @@
           <input type="text" id="email" placeholder="enter your name" />
           <label for="message">Message:</label>
           <textarea id="message" placeholder="enter your message"></textarea>
-          <input type="button" value="Enviar" onclick="msg();" />
+          <button
+            class="bg-pink-500 px-4 py-2 text-white hover:bg-pink-800 sm:px-8 sm:py-3"
+            onclick="msg();""
+          >
+            Enviar
+          </button>
         </form>
 
         <div class="google-map">
